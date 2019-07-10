@@ -19,7 +19,9 @@ function nextBestFormat(formats) {
 	return formats.find(format => !format.bitrate) || formats[0];
 }
 
-const ytdlDiscord = (url, options = {}) => {
+const ytdlDiscord = {};
+
+ytdlDiscord.play = (url, options = {}) => {
 	return new Promise((resolve, reject) => {
 		ytdl.getInfo(url, (err, info) => {
 			if (err) return reject(err);
