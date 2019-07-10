@@ -19,9 +19,7 @@ function nextBestFormat(formats) {
 	return formats.find(format => !format.bitrate) || formats[0];
 }
 
-const ytdlDiscord = {};
-
-ytdlDiscord.play = (url, options = {}) => {
+const ytdlDiscord = (url, options = {}) => {
 	return new Promise((resolve, reject) => {
 		ytdl.getInfo(url, (err, info) => {
 			if (err) return reject(err);
@@ -60,7 +58,7 @@ ytdlDiscord.play = (url, options = {}) => {
 };
 
 ytdlDiscord.getBasicInfo = ytdl.getBasicInfo;
-ytdlDiscord.getInfo = ytdl.getFullInfo;
+ytdlDiscord.getInfo = ytdl.getInfo;
 ytdlDiscord.downloadFromInfo = ytdl.downloadFromInfo;
 ytdlDiscord.chooseFormat = ytdl.chooseFormat;
 ytdlDiscord.filterFormats = ytdl.filterFormats;
