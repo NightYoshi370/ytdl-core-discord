@@ -39,7 +39,7 @@ const ytdlDiscord = (url, options = {}) => {
 						'-reconnect_delay_max', '5',
 						'-hide_banner',
         					'-analyzeduration', '0',
-        					'-vn'
+        					'-vn',
 						'-i', nextBestFormat(info.formats).url,
 						'-analyzeduration', '0',
 						'-loglevel', '0',
