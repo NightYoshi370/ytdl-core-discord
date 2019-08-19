@@ -37,21 +37,12 @@ const ytdlDiscord = (url, options = {}) => {
 						'-reconnect', '1',
 						'-reconnect_streamed', '1',
 						'-reconnect_delay_max', '5',
-						'-hide_banner',
-        					'-analyzeduration', '0',
-        					'-vn',
 						'-i', nextBestFormat(info.formats).url,
 						'-analyzeduration', '0',
 						'-loglevel', '0',
 						'-f', 's16le',
 						'-ar', '48000',
-						'-ac', '2',
-						'-map', '0:a',
-						'-acodec', 'libopus',
-        					'-sample_fmt', 's16',
-        					'-vbr', 'off',
-        					'-b:a', '64000',
-        					'pipe:1'
+						'-ac', '2'
 					],
 				});
 				const opus = new prism.opus.Encoder({ rate: 48000, channels: 2, frameSize: 960 });
